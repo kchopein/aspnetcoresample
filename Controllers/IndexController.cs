@@ -8,6 +8,7 @@ namespace HelloMvcApi
         [HttpGet]
         public IActionResult Get()
         {
+            dsdsd
             return new OkObjectResult("Request processed by " + System.Environment.MachineName);
         }
     }
