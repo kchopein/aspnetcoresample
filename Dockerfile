@@ -13,5 +13,5 @@ ENV ASPNETCORE_URLS http://*:5000
 COPY . .
 RUN dotnet publish -c Release -o out
 
-ENTRYPOINT ["dotnet" "out/aspnetcoresample"]
+ENTRYPOINT ["dotnet", "out/aspnetcoresample"]
 
