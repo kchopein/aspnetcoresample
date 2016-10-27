@@ -10,6 +10,6 @@ EXPOSE 5000/tcp
 ENV ASPNETCORE_URLS http://*:5000
 
 # copy and build everything else
-# COPY . .
+COPY . .
 # RUN dotnet publish -c Release -o out
 RUN dotnet out/aspnetcoresample.dll
