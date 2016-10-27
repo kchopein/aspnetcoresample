@@ -6,6 +6,7 @@ WORKDIR /dotnetapp
 COPY project.json .
 RUN dotnet restore
 
+
 # copy and build everything else
 COPY . .
 RUN dotnet publish -c Release -o out
