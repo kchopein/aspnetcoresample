@@ -6,7 +6,8 @@ WORKDIR /dotnetapp
 COPY project.json .
 RUN dotnet restore
 
-EXPOSE 5000
+EXPOSE 5000/tcp
+ENV ASPNETCORE_URLS http://*:5000
 
 
 # copy and build everything else
