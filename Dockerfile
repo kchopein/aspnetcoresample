@@ -6,6 +6,8 @@ WORKDIR /dotnetapp
 COPY project.json .
 RUN dotnet restore
 
+EXPOSE 5000
+
 
 # copy and build everything else
 COPY . .
