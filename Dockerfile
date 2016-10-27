@@ -1,11 +1,12 @@
-FROM microsoft/aspnetcore:1.0.1
+FROM microsoft/dotnet
 
-WORKDIR /app
+WORKDIR /dotnetapp
 
-COPY project.json /app
-RUN ["dotnet", "restore"]
+# copy project.json and restore as distinct layers
+COPY project.json .
+RUN dotnet restore
 
-COPY . /app
-RUN ["dotnet", "build"]
-
-ENTRYPOINT ["dotnet", "myapp.dll"]
+# copy and build everything else
+COPY . .
+RUN dotnet publish -c Release -o out
+ENTRYPOINT ["dotnet", "out/dotnetapp.dll"]
