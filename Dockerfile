@@ -1,6 +1,6 @@
 FROM microsoft/dotnet
 
-WORKDIR /out
+WORKDIR /dotnetapp
 
 # copy project.json and restore as distinct layers
 # COPY project.json .
@@ -12,4 +12,4 @@ ENV ASPNETCORE_URLS http://*:5000
 # copy and build everything else
 COPY . .
 # RUN dotnet publish -c Release -o out
-RUN dotnet aspnetcoresample.dll
+RUN dotnet out/aspnetcoresample.dll
