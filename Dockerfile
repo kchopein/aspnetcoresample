@@ -12,4 +12,4 @@ ENV ASPNETCORE_URLS http://*:5000
 # copy and build everything else
 # COPY . .
 # RUN dotnet publish -c Release -o out
-ENTRYPOINT ["dotnet", "out/dotnetapp.dll"]
+ENTRYPOINT ["dotnet", "out/aspnetcoresample.dll"]
