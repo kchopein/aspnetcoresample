@@ -19,7 +19,7 @@ namespace WebApplication
 
             var filter = Builders<KchoClass>.Filter.Eq("Name", "Nombre");
 
-            return Ok(collection.Find(filter));
+            return Ok(collection.Count(filter));
         }
     }
 
