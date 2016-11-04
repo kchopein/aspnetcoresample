@@ -1,16 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
-using MongoDB.Bson;
-using System.Linq;
 
-namespace WebApplication{
-    
+namespace WebApplication
+{
+
     public class TestApiController : Controller
     {
         [HttpGet]
         public IActionResult Index()
         {
-            var client = new MongoClient("mongodb://192.168.56.100:27017");
+            var client = new MongoClient("mongodb://172.17.0.2:27017");
             var database = client.GetDatabase("mongopein");
             var collection = database.GetCollection<KchoClass>("kchocollection");
 
