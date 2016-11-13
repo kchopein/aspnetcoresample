@@ -9,7 +9,7 @@ namespace WebApplication
         [HttpGet]
         public IActionResult Index()
         {
-            var client = new MongoClient("mongodb://172.17.0.2:27017");
+            var client = new MongoClient("mongodb://mongodb:27017");
             var database = client.GetDatabase("mongopein");
             var collection = database.GetCollection<KchoClass>("kchocollection");
 
