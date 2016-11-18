@@ -1,25 +1,19 @@
 version: '2'
 services:
-  web:
-    build: .
-    ports:
-     - "5000:5000"
-    volumes:
-     - .:/code
-    networks:
-      - front-tier
-      - back-tier
-  redis:
-    image: redis
-    volumes:
-      - redis-data:/var/lib/redis
-    networks:
-      - back-tier
-volumes:
-  redis-data:
-    driver: local
+   web:
+      image: kchopein/aspnetcoresample
+      ports: 
+        - "80:5000"
+      networks: 
+        - testnetwork
+      depends_on: 
+        - mongodb
+   mongodb:
+      image: mongo
+      ports: 
+        - "27017:27017"
+      networks: 
+        - testnetwork
 networks:
-  front-tier:
-    driver: bridge
-  back-tier:
-    driver: bridge
+   testnetwork:
+      driver: bridge
